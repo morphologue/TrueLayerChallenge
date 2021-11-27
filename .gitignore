@@ -1,0 +1,12 @@
+# IDEs
+.vs/
+.idea/
+.vscode/
+launchSettings.json
+
+# Build output
+bin/
+obj/
+
+# Finder mess
+.DS_Store
