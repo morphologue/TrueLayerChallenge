@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morphologue.Challenges.TrueLayer.Presentation.WebApi", "Morphologue.Challenges.TrueLayer.Presentation.WebApi\Morphologue.Challenges.TrueLayer.Presentation.WebApi.csproj", "{17EC1D1A-3FA5-4709-899B-03550E9878EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17EC1D1A-3FA5-4709-899B-03550E9878EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17EC1D1A-3FA5-4709-899B-03550E9878EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17EC1D1A-3FA5-4709-899B-03550E9878EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17EC1D1A-3FA5-4709-899B-03550E9878EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B06AD197-E265-4D9F-AFCB-B6C1220F659B}
+	EndGlobalSection
+EndGlobal
