@@ -1,4 +1,4 @@
-﻿namespace Morphologue.Challenges.TrueLayer.Infrastructure
+﻿namespace Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure
 {
     public interface IPokemonRequestCommandFactory
     {
@@ -6,7 +6,7 @@
     }
 
     public record PokemonResponse(string Name, IRequestCommand<PokemonSpeciesResponse> SpeciesRequestCommand);
-    
+
     public record PokemonSpeciesResponse(bool IsLegendary, IEnumerable<LocalisedDescription> LocalisedDescriptions, string? HabitatName);
 
     public record LocalisedDescription(string LanguageName, string Description);

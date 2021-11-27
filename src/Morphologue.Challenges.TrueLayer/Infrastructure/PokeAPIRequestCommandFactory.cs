@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
+using System.Text.Json;
 using System.Web;
 
 namespace Morphologue.Challenges.TrueLayer.Infrastructure
@@ -21,9 +22,9 @@ namespace Morphologue.Challenges.TrueLayer.Infrastructure
             return new HttpRequestCommand<PokemonResponse>($"{_urlPrefix}/{urlEncodedName}/", MapPokemonAsync, _httpClientFactory);
         }
 
-        private async Task<PokemonResponse> MapPokemonAsync(Stream rawResponse)
+        private async Task<PokemonResponse> MapPokemonAsync(Stream rawResponse, CancellationToken ct)
         {
-            var raw = await JsonSerializer.DeserializeAsync<JsonElement>(rawResponse);
+            var raw = await JsonSerializer.DeserializeAsync<JsonElement>(rawResponse, cancellationToken: ct);
             var name = raw.GetProperty("name").GetString()
                 ?? throw new JsonException($"The pokemon name was null");
             var speciesUrl = raw.GetProperty("species").GetProperty("url").GetString()
@@ -36,9 +37,9 @@ namespace Morphologue.Challenges.TrueLayer.Infrastructure
             return new HttpRequestCommand<PokemonSpeciesResponse>(speciesUrl, MapSpeciesAsync, _httpClientFactory);
         }
 
-        private async Task<PokemonSpeciesResponse> MapSpeciesAsync(Stream rawResponse)
+        private async Task<PokemonSpeciesResponse> MapSpeciesAsync(Stream rawResponse, CancellationToken ct)
         {
-            var raw = await JsonSerializer.DeserializeAsync<JsonElement>(rawResponse);
+            var raw = await JsonSerializer.DeserializeAsync<JsonElement>(rawResponse, cancellationToken: ct);
             var descriptions = GetDescriptions(raw.GetProperty("flavor_text_entries"));
             var habitatName = raw.GetProperty("habitat").GetProperty("name").GetString();
             var isLegendary = raw.GetProperty("is_legendary").GetBoolean();

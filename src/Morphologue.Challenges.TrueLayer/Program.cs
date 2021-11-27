@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
 using Morphologue.Challenges.TrueLayer;
-using Morphologue.Challenges.TrueLayer.Infrastructure;
+using Morphologue.Challenges.TrueLayer.Interfaces.Application;
+using Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,12 +20,11 @@ app.UseSwagger();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerUI();
-    app.UseDeveloperExceptionPage();
 }
 
-// TODO: Remove this. It's just a POC.
-var mewtwo = await app.Services.GetRequiredService<IPokemonRequestCommandFactory>().CreatePokemonRequestCommand("mewtwo").ExecuteAsync();
-var species = await mewtwo.SpeciesRequestCommand.ExecuteAsync();
-Console.WriteLine(species);
+app.MapGet("/pokemon/{name}", ([FromRoute] string name, [FromServices] IPokemonCharacterisationService service, CancellationToken ct) =>
+    service.CharacteriseAsync(name, false, ct));
+app.MapGet("/pokemon/translated/{name}", ([FromRoute] string name, [FromServices] IPokemonCharacterisationService service, CancellationToken ct) =>
+    service.CharacteriseAsync(name, true, ct));
 
 app.Run();
