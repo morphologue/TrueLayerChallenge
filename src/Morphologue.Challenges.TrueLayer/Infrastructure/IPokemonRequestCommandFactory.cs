@@ -7,5 +7,7 @@
 
     public record PokemonResponse(string Name, IRequestCommand<PokemonSpeciesResponse> SpeciesRequestCommand);
     
-    public record PokemonSpeciesResponse(bool IsLegendary, string Description, string? HabitatName);
+    public record PokemonSpeciesResponse(bool IsLegendary, IEnumerable<LocalisedDescription> LocalisedDescriptions, string? HabitatName);
+
+    public record LocalisedDescription(string LanguageName, string Description);
 }

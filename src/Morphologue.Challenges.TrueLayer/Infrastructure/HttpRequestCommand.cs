@@ -4,10 +4,10 @@
         where TResponse : notnull
     {
         private readonly string _url;
-        private readonly Func<string, TResponse> _mapper;
+        private readonly Func<Stream, Task<TResponse>> _mapper;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        internal HttpRequestCommand(string url, Func<string, TResponse> mapper, IHttpClientFactory httpClientFactory)
+        internal HttpRequestCommand(string url, Func<Stream, Task<TResponse>> mapper, IHttpClientFactory httpClientFactory)
         {
             _url = url;
             _mapper = mapper;
@@ -18,8 +18,8 @@
         {
             var response = await _httpClientFactory.CreateClient().GetAsync(_url);
             response.EnsureSuccessStatusCode();
-            var raw = await response.Content.ReadAsStringAsync();
-            return _mapper.Invoke(raw);
+            var stream = await response.Content.ReadAsStreamAsync();
+            return await _mapper.Invoke(stream);
         }
     }
 }
