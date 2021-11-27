@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Morphologue.Challenges.TrueLayer;
 using Morphologue.Challenges.TrueLayer.Interfaces.Application;
-using Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

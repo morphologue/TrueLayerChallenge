@@ -1,8 +1,7 @@
-﻿namespace Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure
+﻿namespace Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
+
+public interface IRequestCommand<TResponse>
+    where TResponse : notnull
 {
-    public interface IRequestCommand<TResponse>
-        where TResponse : notnull
-    {
-        Task<TResponse> ExecuteAsync(CancellationToken ct);
-    }
+    Task<TResponse> ExecuteAsync(CancellationToken ct);
 }
