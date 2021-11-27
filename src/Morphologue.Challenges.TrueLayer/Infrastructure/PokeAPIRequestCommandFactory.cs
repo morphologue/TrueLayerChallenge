@@ -45,14 +45,14 @@ namespace Morphologue.Challenges.TrueLayer.Infrastructure
             return new(isLegendary, descriptions, habitatName);
         }
 
-        private IEnumerable<LocalisedDescription> GetDescriptions(JsonElement flavourTextEntries)
+        private static IEnumerable<LocalisedDescription> GetDescriptions(JsonElement flavourTextEntries)
         {
             return flavourTextEntries
                 .EnumerateArray()
                 .Select(e => new LocalisedDescription(
-                    LanguageName: e.GetProperty("flavor_text").GetString()
+                    LanguageName: e.GetProperty("language").GetProperty("name").GetString()
                         ?? throw new JsonException("The language name of a description of the pokemon was null"),
-                    Description: e.GetProperty("language").GetProperty("name").GetString()
+                    Description: e.GetProperty("flavor_text").GetString()
                         ?? throw new JsonException("A description of the pokemon was null")));
         }
     }

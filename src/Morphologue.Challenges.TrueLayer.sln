@@ -5,10 +5,11 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F799FEB-E54C-4A2E-BF9F-F74A79E17E24}"
 	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Morphologue.Challenges.TrueLayer", "Morphologue.Challenges.TrueLayer\Morphologue.Challenges.TrueLayer.csproj", "{F879C919-3994-4F44-930D-D8CE8E7EEC0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morphologue.Challenges.TrueLayer", "Morphologue.Challenges.TrueLayer\Morphologue.Challenges.TrueLayer.csproj", "{F879C919-3994-4F44-930D-D8CE8E7EEC0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

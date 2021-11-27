@@ -3,6 +3,7 @@
 .idea/
 .vscode/
 launchSettings.json
+*.csproj.user
 
 # Build output
 bin/
