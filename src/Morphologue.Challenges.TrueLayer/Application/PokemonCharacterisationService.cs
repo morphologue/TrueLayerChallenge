@@ -1,5 +1,6 @@
 ﻿using Morphologue.Challenges.TrueLayer.Interfaces.Application;
 using Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
+using System.Text.RegularExpressions;
 
 namespace Morphologue.Challenges.TrueLayer.Application;
 
@@ -19,6 +20,8 @@ internal class PokemonCharacterisationService : IPokemonCharacterisationService
         var speciesResponse = await pokemonResponse.SpeciesRequestCommand.ExecuteAsync(ct);
         var description = speciesResponse.LocalisedDescriptions.FirstOrDefault(d => d.LanguageName == "en")?.Description
             ?? throw new NotSupportedException("The pokemon has no English description");
-        return new(pokemonResponse.Name, speciesResponse.IsLegendary, description, speciesResponse.HabitatName);
+        var cleanedDescription = Regex.Replace(description, "\\s+", " ");
+
+        return new(pokemonResponse.Name, cleanedDescription, speciesResponse.HabitatName, speciesResponse.IsLegendary);
     }
 }
