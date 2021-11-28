@@ -1,0 +1,79 @@
+{
+  "Guid": "91f15322-57b5-4dd5-b77c-780a54763fdb",
+  "Title": "",
+  "Request": {
+    "Path": {
+      "Matchers": [
+        {
+          "Name": "WildcardMatcher",
+          "Pattern": "/api/v2/pokemon/asdfh/",
+          "IgnoreCase": false
+        }
+      ]
+    },
+    "Methods": [
+      "GET"
+    ],
+    "Headers": [
+      {
+        "Name": "Host",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "localhost:8080",
+            "IgnoreCase": true
+          }
+        ]
+      },
+      {
+        "Name": "traceparent",
+        "Matchers": [
+          {
+            "Name": "WildcardMatcher",
+            "Pattern": "00-2c0e99c2d47a75723a5a9c3dcbf2bcc6-64dbb9afdd5082cf-00",
+            "IgnoreCase": true
+          }
+        ]
+      }
+    ]
+  },
+  "Response": {
+    "StatusCode": 404,
+    "Body": "Not Found",
+    "Headers": {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Content-Length": "9",
+      "Date": "Sun, 28 Nov 2021 01:37:59 GMT",
+      "Connection": "keep-alive",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      "ETag": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\"",
+      "function-execution-id": "4s4n37sf9tn7",
+      "x-cloud-trace-context": "4c0c47a1e90d074ee76eb4732ceebcaf",
+      "x-fh-no-setcookie-unroll": "true",
+      "X-Powered-By": "Express",
+      "x-served-by": "cache-syd10148-SYD",
+      "X-Cache": "MISS",
+      "x-cache-hits": "0",
+      "x-timer": "S1638063340.809126,VS0,VE1708",
+      "Vary": [
+        "Accept-Encoding",
+        "x-fh-requested-host",
+        "accept-encoding"
+      ],
+      "CF-Cache-Status": "HIT",
+      "Age": "138",
+      "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=OoEcE2Mzue%2BvVMh44fwRIpXdmkuIqpt8rfeO2lCRvNDgTQ%2FuFfRb8nBj2rjA1t%2F18kINTHjDwrynh1kSFiWgd5By4JG4R3EDKhuFCnmKEWDY4PRaPWWcTzNxqQEc\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+      "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+      "Server": "cloudflare",
+      "CF-RAY": "6b4fdfca2fa86a12-SYD",
+      "Alt-Svc": [
+        "h3=\":443\"",
+        "h3-29=\":443\"",
+        "h3-28=\":443\"",
+        "h3-27=\":443\""
+      ]
+    }
+  }
+}

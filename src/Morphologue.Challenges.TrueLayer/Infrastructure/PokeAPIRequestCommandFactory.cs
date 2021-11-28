@@ -7,19 +7,21 @@ namespace Morphologue.Challenges.TrueLayer.Infrastructure;
 [SingletonService]
 internal class PokeAPIRequestCommandFactory : IPokemonRequestCommandFactory
 {
-    private readonly string _urlPrefix;
+    private readonly IConfiguration _config;
     private readonly IHttpClientFactory _httpClientFactory;
 
     public PokeAPIRequestCommandFactory(IConfiguration config, IHttpClientFactory httpClientFactory)
     {
-        _urlPrefix = config["PokeAPIPokemonUrlPrefix"];
+        _config = config;
         _httpClientFactory = httpClientFactory;
     }
+
+    private string UrlPrefix => _config["PokeAPIPokemonUrlPrefix"];
 
     public IRequestCommand<PokemonResponse> CreatePokemonRequestCommand(string name)
     {
         var urlEncodedName = HttpUtility.UrlEncode(name);
-        return new HttpRequestCommand<PokemonResponse>($"{_urlPrefix}/{urlEncodedName}/", MapPokemonAsync, _httpClientFactory);
+        return new HttpRequestCommand<PokemonResponse>($"{UrlPrefix}/{urlEncodedName}/", MapPokemonAsync, _httpClientFactory);
     }
 
     private async Task<PokemonResponse> MapPokemonAsync(Stream rawResponse, CancellationToken ct)

@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Integration\Resources\HappyMappings\020348d0-22bc-44b4-bee8-39b9f5bc508a.json" />
+    <None Remove="Integration\Resources\HappyMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
+    <None Remove="Integration\Resources\HappyMappings\7f2b34aa-9bb8-4158-913a-07cb06c25841.json" />
+    <None Remove="Integration\Resources\HappyMappings\9ade63eb-0945-49e6-93f5-8ac9df80af85.json" />
+    <None Remove="Integration\Resources\NotFoundMappings\91f15322-57b5-4dd5-b77c-780a54763fdb.json" />
+    <None Remove="Integration\Resources\RateLimitedMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
+    <None Remove="Integration\Resources\RateLimitedMappings\f33ffc73-656b-40a6-8782-27ada6c4da4e.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Integration\Resources\HappyMappings\020348d0-22bc-44b4-bee8-39b9f5bc508a.json" />
+    <EmbeddedResource Include="Integration\Resources\HappyMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
+    <EmbeddedResource Include="Integration\Resources\HappyMappings\7f2b34aa-9bb8-4158-913a-07cb06c25841.json" />
+    <EmbeddedResource Include="Integration\Resources\HappyMappings\9ade63eb-0945-49e6-93f5-8ac9df80af85.json" />
+    <EmbeddedResource Include="Integration\Resources\NotFoundMappings\91f15322-57b5-4dd5-b77c-780a54763fdb.json" />
+    <EmbeddedResource Include="Integration\Resources\RateLimitedMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
+    <EmbeddedResource Include="Integration\Resources\RateLimitedMappings\f33ffc73-656b-40a6-8782-27ada6c4da4e.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="Scrutor" Version="3.3.0" />
+    <PackageReference Include="WireMock.Net" Version="1.4.27" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Morphologue.Challenges.TrueLayer\Morphologue.Challenges.TrueLayer.csproj" />
+  </ItemGroup>
+
+</Project>

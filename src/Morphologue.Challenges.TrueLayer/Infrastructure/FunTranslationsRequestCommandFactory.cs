@@ -6,14 +6,16 @@ namespace Morphologue.Challenges.TrueLayer.Infrastructure;
 [SingletonService]
 public class FunTranslationsRequestCommandFactory : ITranslationRequestCommandFactory
 {
-    private readonly string _urlPrefix;
+    private readonly IConfiguration _config;
     private readonly IHttpClientFactory _httpClientFactory;
 
     public FunTranslationsRequestCommandFactory(IConfiguration config, IHttpClientFactory httpClientFactory)
     {
-        _urlPrefix = config["FunTranslationsUrlPrefix"];
+        _config = config;
         _httpClientFactory = httpClientFactory;
     }
+
+    private string UrlPrefix => _config["FunTranslationsUrlPrefix"];
 
     public IRequestCommand<string> CreateTranslationCommand(string original, TranslationTarget target)
     {
@@ -28,7 +30,7 @@ public class FunTranslationsRequestCommandFactory : ITranslationRequestCommandFa
             ["text"] = original
         });
 
-        return new HttpRequestCommand<string>($"{_urlPrefix}/{urlSuffix}.json", MapTranslationAsync, _httpClientFactory, body);
+        return new HttpRequestCommand<string>($"{UrlPrefix}/{urlSuffix}.json", MapTranslationAsync, _httpClientFactory, body);
     }
 
     private async Task<string> MapTranslationAsync(Stream rawResponse, CancellationToken ct)
