@@ -12,6 +12,7 @@ public class WireMockServerFixture : IDisposable
     {
         WireMock = WireMockServer.Start(new WireMockServerSettings
         {
+            Urls = new[] { "http://localhost:5010" },
             ReadStaticMappings = true,
             AllowPartialMapping = true,
             FileSystemHandler = new EmbeddedResourceFileSystemHandler()
