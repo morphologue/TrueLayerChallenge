@@ -1,2 +1,12 @@
+# This largely mirrors .gitignore.
+
+*/.vs*
+*/.idea*
+*/.vscode*
+*/launchSettings.json
+*/*.csproj.user
+
 */bin*
 */obj*
+
+*/.DS_Store

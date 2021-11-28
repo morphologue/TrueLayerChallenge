@@ -82,6 +82,7 @@ code to remain in the driving seat.
 
 Before deploying this code to a production environment, this following considerations should be taken into account:
 
+* API key: An API key should be configurable for the Fun Translations API in order to avoid rate limiting.
 * Caching: It should not be necessary to hit third party APIs repeatedly with the same requests. A cache, e.g. Redis,
 could stand in the middle.
 * Resiliency: HTTP requests could be retried in the event of transient (e.g. network-related) issues. It would be
