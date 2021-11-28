@@ -20,6 +20,7 @@ builder.Services.Scan(scan =>
 
 var app = builder.Build();
 
+app.UseMiddleware<NotFoundMiddleware>();
 app.UseSwagger();
 if (app.Environment.IsDevelopment())
 {

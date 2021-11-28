@@ -1,4 +1,5 @@
-﻿using Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
+﻿using Morphologue.Challenges.TrueLayer.Application;
+using Morphologue.Challenges.TrueLayer.Interfaces.Infrastructure;
 using System.Text;
 
 namespace Morphologue.Challenges.TrueLayer.Infrastructure;
@@ -33,6 +34,10 @@ internal class HttpRequestCommand<TResponse> : IRequestCommand<TResponse>
         }
         using var response = await _httpClientFactory.CreateClient().SendAsync(message, ct);
 
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            throw new NotFoundException();
+        }
         response.EnsureSuccessStatusCode();
         var stream = await response.Content.ReadAsStreamAsync(ct);
         return await _mapper.Invoke(stream, ct);
