@@ -12,13 +12,7 @@ internal class EmbeddedResourceFileSystemHandler : IFileSystemHandler
 {
     private static readonly Assembly _assembly = typeof(EmbeddedResourceFileSystemHandler).Assembly;
     private static readonly string[] _allResourceNames = _assembly.GetManifestResourceNames();
-
-    private readonly string _resourceNamePrefix;
-
-    public EmbeddedResourceFileSystemHandler(string resourceSubdirectory)
-    {
-        _resourceNamePrefix = $"Morphologue.Challenges.TrueLayer.Tests.Integration.Resources.{resourceSubdirectory}.";
-    }
+    private const string _resourceNamePrefix = "Morphologue.Challenges.TrueLayer.Tests.Integration.Resources.Mappings.";
 
     #region Unsupported operations
     public void CreateFolder(string path) => ThrowForWrite();

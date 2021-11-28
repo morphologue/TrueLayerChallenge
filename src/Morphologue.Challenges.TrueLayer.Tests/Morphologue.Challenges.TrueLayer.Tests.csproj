@@ -8,23 +8,38 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Integration\Resources\HappyMappings\020348d0-22bc-44b4-bee8-39b9f5bc508a.json" />
-    <None Remove="Integration\Resources\HappyMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
-    <None Remove="Integration\Resources\HappyMappings\7f2b34aa-9bb8-4158-913a-07cb06c25841.json" />
-    <None Remove="Integration\Resources\HappyMappings\9ade63eb-0945-49e6-93f5-8ac9df80af85.json" />
-    <None Remove="Integration\Resources\NotFoundMappings\91f15322-57b5-4dd5-b77c-780a54763fdb.json" />
-    <None Remove="Integration\Resources\RateLimitedMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
-    <None Remove="Integration\Resources\RateLimitedMappings\f33ffc73-656b-40a6-8782-27ada6c4da4e.json" />
+    <Compile Remove="Integration\Resources\GeneralMappings\**" />
+    <Compile Remove="Integration\Resources\RateLimitedMappings\**" />
+    <EmbeddedResource Remove="Integration\Resources\GeneralMappings\**" />
+    <EmbeddedResource Remove="Integration\Resources\RateLimitedMappings\**" />
+    <None Remove="Integration\Resources\GeneralMappings\**" />
+    <None Remove="Integration\Resources\RateLimitedMappings\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Integration\Resources\HappyMappings\020348d0-22bc-44b4-bee8-39b9f5bc508a.json" />
-    <EmbeddedResource Include="Integration\Resources\HappyMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
-    <EmbeddedResource Include="Integration\Resources\HappyMappings\7f2b34aa-9bb8-4158-913a-07cb06c25841.json" />
-    <EmbeddedResource Include="Integration\Resources\HappyMappings\9ade63eb-0945-49e6-93f5-8ac9df80af85.json" />
-    <EmbeddedResource Include="Integration\Resources\NotFoundMappings\91f15322-57b5-4dd5-b77c-780a54763fdb.json" />
-    <EmbeddedResource Include="Integration\Resources\RateLimitedMappings\3cbb513a-9f89-48b0-abd1-27b863f89083.json" />
-    <EmbeddedResource Include="Integration\Resources\RateLimitedMappings\f33ffc73-656b-40a6-8782-27ada6c4da4e.json" />
+    <None Remove="Integration\Resources\Mappings\09406f7f-733d-4db3-aeb3-d60f416df595.json" />
+    <None Remove="Integration\Resources\Mappings\110a774e-9f0f-48c0-bcd1-84788a8c52ff.json" />
+    <None Remove="Integration\Resources\Mappings\19efc68c-dcbe-452a-9f09-0be72ea74b44.json" />
+    <None Remove="Integration\Resources\Mappings\54d41236-a14d-4b40-8af2-ed1009219046.json" />
+    <None Remove="Integration\Resources\Mappings\69b86e10-a4f0-4f94-ba39-98d3fa5300cc.json" />
+    <None Remove="Integration\Resources\Mappings\9e6444ba-08e5-42f9-a03a-96987c33a3a7.json" />
+    <None Remove="Integration\Resources\Mappings\a7bbace8-59ad-4a98-878d-b207e9b7477b.json" />
+    <None Remove="Integration\Resources\Mappings\b02c9878-223e-4ece-97bf-ab1562ebfe17.json" />
+    <None Remove="Integration\Resources\Mappings\b4d54540-c6c4-4e95-a490-beb452f2c913.json" />
+    <None Remove="Integration\Resources\Mappings\d7124b3e-a022-4e79-81e5-fe53e6948ab0.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Integration\Resources\Mappings\09406f7f-733d-4db3-aeb3-d60f416df595.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\110a774e-9f0f-48c0-bcd1-84788a8c52ff.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\19efc68c-dcbe-452a-9f09-0be72ea74b44.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\54d41236-a14d-4b40-8af2-ed1009219046.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\69b86e10-a4f0-4f94-ba39-98d3fa5300cc.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\9e6444ba-08e5-42f9-a03a-96987c33a3a7.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\a7bbace8-59ad-4a98-878d-b207e9b7477b.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\b02c9878-223e-4ece-97bf-ab1562ebfe17.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\b4d54540-c6c4-4e95-a490-beb452f2c913.json" />
+    <EmbeddedResource Include="Integration\Resources\Mappings\d7124b3e-a022-4e79-81e5-fe53e6948ab0.json" />
   </ItemGroup>
 
   <ItemGroup>

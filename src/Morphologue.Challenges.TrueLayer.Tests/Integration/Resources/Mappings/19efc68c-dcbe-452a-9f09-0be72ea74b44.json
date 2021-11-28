@@ -1,12 +1,12 @@
 {
-  "Guid": "9ade63eb-0945-49e6-93f5-8ac9df80af85",
+  "Guid": "19efc68c-dcbe-452a-9f09-0be72ea74b44",
   "Title": "",
   "Request": {
     "Path": {
       "Matchers": [
         {
           "Name": "WildcardMatcher",
-          "Pattern": "/translate/yoda.json",
+          "Pattern": "/translate/shakespeare.json",
           "IgnoreCase": false
         }
       ]
@@ -40,7 +40,7 @@
         "Matchers": [
           {
             "Name": "WildcardMatcher",
-            "Pattern": "00-c5dd7a264b8c8544bb89e3bd5224f449-090133e421e5d2a0-00",
+            "Pattern": "00-818bfd519e953635636f94ba42d93744-6513c06b5f774ec1-00",
             "IgnoreCase": true
           }
         ]
@@ -50,7 +50,7 @@
         "Matchers": [
           {
             "Name": "WildcardMatcher",
-            "Pattern": "116",
+            "Pattern": "118",
             "IgnoreCase": true
           }
         ]
@@ -61,7 +61,7 @@
         "Name": "JsonMatcher",
         "Patterns": [
           {
-            "text": "It was created by\na scientist after\nyears of horrific\fgene splicing and\nDNA engineering\nexperiments."
+            "text": "Its brain can out­\nperform a super­\ncomputer.\fIts intelligence\nquotient is said\nto be 5,000."
           }
         ],
         "IgnoreCase": true
@@ -75,21 +75,21 @@
         "total": 1
       },
       "contents": {
-        "translated": "Created by a scientist after years of horrific gene splicing and dna engineering experiments,  it was.",
-        "text": "It was created by\na scientist after\nyears of horrific\fgene splicing and\nDNA engineering\nexperiments.",
-        "translation": "yoda"
+        "translated": "Its brain can out­ perform a super­ computer. Its intelligence quotient is did doth sayeth to beest 5,000.",
+        "text": "Its brain can out­\nperform a super­\ncomputer.\fIts intelligence\nquotient is said\nto be 5,000.",
+        "translation": "shakespeare"
       }
     },
     "Headers": {
       "Expires": "0",
       "Content-Language": "en",
       "Content-Type": "application/json; charset=utf-8",
-      "Date": "Sun, 28 Nov 2021 01:27:25 GMT",
+      "Date": "Sun, 28 Nov 2021 06:06:11 GMT",
       "Server": "Apache",
       "Access-Control-Allow-Origin": "*",
       "X-Auth-Status": "true",
       "X-RateLimit-Limit": "5 per hour",
-      "X-RateLimit-Remaining": "3",
+      "X-RateLimit-Remaining": "4",
       "Cache-Control": "max-age={expires}, pre-check=86400, post-check=43200",
       "X-Powered-By": "Luracast Restler v3.0.0rc3",
       "Upgrade": "h2",
