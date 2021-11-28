@@ -32,4 +32,4 @@ app.MapGet("/pokemon/{name}", ([FromRoute] string name, [FromServices] IPokemonC
 app.MapGet("/pokemon/translated/{name}", ([FromRoute] string name, [FromServices] IPokemonCharacterisationService service, CancellationToken ct) =>
     service.CharacteriseAsync(name, true, ct));
 
-app.Run("http://localhost:5000");
+app.Run("http://*:5000");
